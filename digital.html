@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		body{
+			background: grey;
+		}
+		h1{
+			text-align: center;
+			color: white;
+		}
+		.display{
+			margin: auto;
+			display: flex;
+			width: 30%;
+
+
+
+		}
+		#clock{
+			margin: 0px auto;
+			display: flex;
+			width: 30%;
+		}
+		#hour, #min, #second{
+			background: black;
+			width: 11%;
+			color:white;
+			font-size: 30px;
+
+			border: 1px solid white;
+			border-top:none;
+			padding: 4px;
+		}
+		#second{
+			width: 13%;
+		}
+	#hour1, #min1, #second1{
+			background: black;
+			width:11%;
+			color:white;
+			font-size: 30px;
+			padding: 4px;
+			border: 1px solid white;
+			
+			
+			
+		}
+		#second1{
+			width: 13%;
+		}
+
+		
+
+	</style>
+	<title>Digital Clock</title>
+</head>
+<body>
+	<h1>Digital CLock</h1>
+	<div class="display">
+		<div id="hour1">Hr</div>
+			<div id="min1">M</div>
+			<div id="second1">Sec</div>
+	</div>
+		<div id="clock">
+			<div id="hour"><p>hr</p></div>
+			<div id="min"></div>
+			<div id="second"></div>
+		</div>	
+</body>
+<script>
+	let time= ()=>{
+
+
+	let clock = document.getElementById("clock");
+	let hour = document.getElementById("hour");
+	let min = document.getElementById("min");
+	let sec = document.getElementById("second");
+	let date = new Date();
+	let h = date.getHours();
+	let m = date.getMinutes();
+	let s = date.getSeconds();
+	console.log(h);
+	if(h<10){
+		h="0" + h;
+	}
+	if(m<10){
+		m = "0" + m;
+
+	}
+	if(s<10){
+		s= "0"+s;
+	}
+	hour.innerText = h;
+	min.innerText = m;
+	sec.innerText	 = s;
+setTimeout(time, 1000);
+}
+	time();
+	
+
+
+
+</script>
+</html>
